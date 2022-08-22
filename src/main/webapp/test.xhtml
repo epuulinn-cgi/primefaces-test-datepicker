@@ -16,7 +16,18 @@
 
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
-            
+            <p:datePicker
+                    id="datePicker"
+                    value="#{testView.date}"
+                    showIcon="true"
+                    mindate="#{testView.minDate}"
+                    showTime="true"
+                    pattern="#{testView.dateTimePattern}"
+                    locale="#{testView.currentLocale}"
+                    converter="TestTimeConverter"
+                    showOnFocus="false">
+                <p:ajax event="change" update="@this"/>
+            </p:datePicker>
         </h:form>
 
     </h:body>
